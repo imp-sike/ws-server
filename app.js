@@ -22,7 +22,7 @@ wss.on('connection', function connection(ws) {
 
 const updateClients = (message) => {
   wss.clients.forEach(function each(client) {
-    if (client.readyState === WebSocket.OPEN) {
+    if (client.readyState === 1) {
       client.send(message);
     }
   });
